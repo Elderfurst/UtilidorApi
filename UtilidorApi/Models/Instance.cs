@@ -8,7 +8,7 @@ namespace UtilidorApi.Models
         public int Id { get; set; }
         public int UtilityId { get; set; }
         public DateTime StartTime { get; set; }
-        public DateTime CompleteTime { get; set; }
+        public DateTime? CompleteTime { get; set; }
         public int? Numerator { get; set; }
         public int? Denominator { get; set; }
 

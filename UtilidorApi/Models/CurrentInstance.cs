@@ -10,8 +10,7 @@ namespace UtilidorApi.Models
         public int InstanceId { get; set; }
         public string UtilityName { get; set; }
         public DateTime StartTime { get; set; }
-        public long ElapsedTime { get; set; }
         public long AverageTime { get; set; }
-        public int PercentComplete { get; set; }
+        public double PercentComplete { get; set; }
     }
 }

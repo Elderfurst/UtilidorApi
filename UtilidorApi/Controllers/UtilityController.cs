@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using UtilidorApi.Models;
 using UtilidorApi.Services.Interfaces;
@@ -20,9 +17,16 @@ namespace UtilidorApi.Controllers
             _utilityService = utilityService;
         }
         [HttpGet]
-        public async Task<List<Utility>> GetRunningUtilities()
+        [Route("running")]
+        public async Task<List<CurrentInstance>> GetRunningUtilities()
         {
             return await _utilityService.GetRunningUtilities();
+        }
+
+        [HttpGet]
+        public async Task<List<Utility>> GetAllUtilities()
+        {
+            return await _utilityService.GetAllUtilities();
         }
     }
 }

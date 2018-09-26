@@ -9,7 +9,7 @@ using UtilidorApi.Data;
 
 namespace UtilidorApi.Migrations
 {
-    [DbContext(typeof(UtilidorContext))]
+    [DbContext(typeof(UtilityContext))]
     [Migration("20180926150118_Initial")]
     partial class Initial
     {

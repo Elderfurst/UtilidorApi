@@ -25,9 +25,14 @@ namespace UtilidorApi
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             var connection = Configuration.GetConnectionString("UtilidorDatabase");
-            services.AddDbContext<UtilidorContext>(options => options.UseSqlServer(connection));
+            services.AddDbContext<UtilityContext>(options => options.UseSqlServer(connection));
 
             services.AddScoped<IUtilityService, UtilityService>();
+
+            services.AddCors(o => o.AddPolicy("AllowAll", builder =>
+            {
+                builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+            }));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -42,8 +47,8 @@ namespace UtilidorApi
                 app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
             app.UseMvc();
+            app.UseCors("AllowAll");
         }
     }
 }

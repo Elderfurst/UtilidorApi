@@ -3,9 +3,9 @@ using UtilidorApi.Models;
 
 namespace UtilidorApi.Data
 {
-    public class UtilidorContext : DbContext
+    public class UtilityContext : DbContext
     {
-        public UtilidorContext(DbContextOptions<UtilidorContext> context) : base(context) { }
+        public UtilityContext(DbContextOptions<UtilityContext> context) : base(context) { }
 
         public DbSet<Utility> Utilities { get; set; }
         public DbSet<Instance> Instances { get; set; }
