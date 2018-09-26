@@ -47,8 +47,8 @@ namespace UtilidorApi
                 app.UseHsts();
             }
 
-            app.UseMvc();
             app.UseCors("AllowAll");
+            app.UseMvc();
         }
     }
 }
