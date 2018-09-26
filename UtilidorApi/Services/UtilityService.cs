@@ -55,5 +55,20 @@ namespace UtilidorApi.Services
         {
             return _utilityContext.Utilities.ToListAsync();
         }
+
+        public Task<List<Instance>> GetInstancesByUtilityId(int utilityId, int count)
+        {
+            var instances = _utilityContext.Instances.Where(x => x.UtilityId == utilityId);
+            if(count == -1 || count == 0)
+            {
+                return instances.ToListAsync();
+            }
+            return instances.Take(count).ToListAsync();
+        }
+
+        public Task<List<Log>> GetLogsByInstanceId(int instanceId)
+        {
+            return _utilityContext.Logs.Where(x => x.InstanceId == instanceId).ToListAsync();
+        }
     }
 }

@@ -8,5 +8,7 @@ namespace UtilidorApi.Services.Interfaces
     {
         Task<List<CurrentInstance>> GetRunningUtilities();
         Task<List<Utility>> GetAllUtilities();
+        Task<List<Instance>> GetInstancesByUtilityId(int utilityId, int count);
+        Task<List<Log>> GetLogsByInstanceId(int instanceId);
     }
 }

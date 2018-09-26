@@ -28,5 +28,19 @@ namespace UtilidorApi.Controllers
         {
             return await _utilityService.GetAllUtilities();
         }
+
+        [HttpGet]
+        [Route("{utilityId}/instances")]
+        public async Task<List<Instance>> GetInstancesByUtilityId(int utilityId, int count)
+        {
+            return await _utilityService.GetInstancesByUtilityId(utilityId, count);
+        }
+
+        [HttpGet]
+        [Route("logs/{instanceId}")]
+        public async Task<List<Log>> GetLogsByInstanceId(int instanceId)
+        {
+            return await _utilityService.GetLogsByInstanceId(instanceId);
+        }
     }
 }
