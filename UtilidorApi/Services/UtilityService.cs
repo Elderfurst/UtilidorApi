@@ -61,9 +61,9 @@ namespace UtilidorApi.Services
             var instances = _utilityContext.Instances.Where(x => x.UtilityId == utilityId);
             if(count == -1 || count == 0)
             {
-                return instances.ToListAsync();
+                return instances.OrderByDescending(x => x.StartTime).ToListAsync();
             }
-            return instances.Take(count).ToListAsync();
+            return instances.OrderByDescending(x => x.StartTime).Take(count).ToListAsync();
         }
 
         public Task<List<Log>> GetLogsByInstanceId(int instanceId)

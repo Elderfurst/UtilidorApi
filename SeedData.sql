@@ -50,7 +50,6 @@ insert into instances (utilityid, starttime, numerator, denominator) values (23,
 insert into instances (utilityid, starttime, numerator, denominator) values (21, '2018-09-28 2:15:00', 698, 702);
 insert into instances (utilityid, starttime, numerator, denominator) values (5, '2018-09-28 9:45:12', 200, 350);
 
-
 insert into logs (instanceid, timestamp, level, message) values (2064, '2018-09-28 9:25:01', 0, 'Beginning execution');
 insert into logs (instanceid, timestamp, level, message) values (2064, '2018-09-28 9:25:15', 0, 'Processed organization with id 567');
 insert into logs (instanceid, timestamp, level, message) values (2064, '2018-09-28 9:25:45', 2, 'Could not process file for organization with id 900: Error while validating user with id 10245');
