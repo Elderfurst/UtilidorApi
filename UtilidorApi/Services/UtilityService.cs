@@ -1,8 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
 using UtilidorApi.Data;
+using UtilidorApi.Enums;
 using UtilidorApi.Models;
 using UtilidorApi.Services.Interfaces;
 
